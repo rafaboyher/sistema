@@ -1,0 +1,53 @@
+﻿@model IEnumerable<SistemaFaculdade.Models.Aluno>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2 class="text-center">Registro de Alunos</h2>
+<hr />
+
+<p>
+
+    <a href='@Url.Action("Create", "Aluno")' class="btn btn-success center-block">Adicionar Novo Aluno</a>
+</p>
+<table class="table table-hover table-bordered bg-warning">
+    <tr>
+        <th class="text-center">
+            @Html.DisplayName("Curso")
+        </th>
+        <th class="text-center">
+            @Html.DisplayNameFor(model => model.Nome)
+        </th>
+        <th class="text-center">
+            @Html.DisplayName("Data de Nascimento")
+        </th>
+        <th class="text-center">
+            @Html.DisplayName("Média de Notas")
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td class="text-center">
+            @Html.DisplayFor(modelItem => item.Curso.Descricao)
+        </td>
+        <td class="text-center">
+            @Html.DisplayFor(modelItem => item.Nome)
+        </td>
+        <td class="text-center">
+            @Html.DisplayFor(modelItem => item.DataNascimento)
+        </td>
+        <td class="text-center">
+            @Html.DisplayFor(modelItem => item.MediaNota)
+        </td>
+        <td class="text-center">
+            <a href='@Url.Action("Details", "Aluno", new { id = item.IDAluno })' class="btn btn-primary">Detalhes</a>
+            <a href='@Url.Action("Edit", "Aluno", new { id = item.IDAluno })' class="btn btn-warning">Editar</a>
+            <a href='@Url.Action("Delete", "Aluno", new { id = item.IDAluno })' class="btn btn-danger">Excluir</a>
+        </td>
+    </tr>
+}
+
+</table>

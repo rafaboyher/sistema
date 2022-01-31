@@ -1,0 +1,53 @@
+﻿@model SistemaFaculdade.Models.Curso
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2 class="text-center">Página de exclusão</h2>
+<div>
+    <hr />
+    <table class="table table-bordered bg-warning">
+        <tr>
+            <th class="text-center">
+                @Html.DisplayName("Descrição:")
+            </th>
+        </tr>
+        <tr>
+            <td class="text-center">
+                @Html.DisplayFor(model => model.Descricao)
+            </td>
+        </tr>
+    </table>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color col-md-offset-0">
+            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#ModalExcluirCurso">
+                Excluir
+            </button>
+            <a href='@Url.Action("Index", "Cursoes1")' class="btn btn-danger">Cancelar</a>
+        </div>
+        <div class="modal fade" id="ModalExcluirCurso" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h4 class="modal-title text-center" id="exampleModalLongTitle">Tem certeza que deseja excluir o curso @Html.DisplayFor(model => model.Descricao)?</h4>
+                    </div>
+                    <div class="modal-body text-center alert-danger">
+                        Esta ação não poderá ser revertida.
+                    </div>
+                    <div class="modal-footer">
+                        <input type="submit" value="Excluir" class="btn btn-default btn-success" />
+                        <a href='@Url.Action("Index", "Cursoes1")' class="btn btn-danger" data-dismiss="modal">Cancelar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>

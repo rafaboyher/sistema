@@ -1,0 +1,57 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+    
+    <div class="jumbotron">
+        <h1 class="display-4 text-center">Bem Vindo!</h1>
+        <p class="lead text-center">Este é meu primeiro sistema desenvolvido com ASP.NET usando o Entity Framework.</p>
+        <hr class="my-4">
+        <p class="text-center">Agradeço a oportunidade que me deram com este desafio. O sistema não possui todas as funcionalidades que foram solicitadas, mas fiz o melhor que podia com o conhecimento que já tinha e que adquiri durante este desafio.</p>
+        <p class="lead text-center">
+            <a href='@Url.Action("About", "Home")' class="btn btn-primary btn-lg">Mais informações</a>
+        </p>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            <div class="card center-block" style="width:200px">
+                <img class="card-img-top img-responsive" src="https://images.squarespace-cdn.com/content/v1/5bfc81e6266c07c8f534faa3/1559343707899-IWBZLIFPA4ONXM5O2445/aluno.png" alt="Curso">
+                <div class="card-body">
+                    <h4 class="card-title text-center">Página de Cursos</h4>
+                    <p class="card-text text-center">Clique no botão abaixo para ver a lista de cursos.</p>
+                    <a href='@Url.Action("Index", "Cursoes1")' class="btn btn-primary center-block">Cursos</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card center-block" style="width:200px">
+                <img class="card-img-top img-responsive" src="https://images.vexels.com/media/users/3/176029/isolated/preview/d93f56ff8c87b7d09de7b39c306028c9-silhueta-quadrada-do-bone-academico-do-aluno-formando-do-grupo.png" alt="Aluno">
+                <div class="card-body">
+                    <h4 class="card-title text-center">Página de Alunos</h4>
+                    <p class="card-text text-center">Clique no botão abaixo para ver a lista de alunos.</p>
+                    <a href='@Url.Action("Index", "Aluno")' class="btn btn-primary center-block">Alunos</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card center-block" style="width:200px">
+                <img class="card-img-top img-responsive" src="https://cdn-icons-png.flaticon.com/512/90/90477.png" alt="Professor">
+                <div class="card-body">
+                    <h4 class="card-title text-center">Página de Professores</h4>
+                    <p class="card-text text-center">Clique no botão abaixo para ver a lista de professores.</p>
+                    <a href='@Url.Action("Index", "Professors1")' class="btn btn-primary center-block">Professores</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card center-block" style="width:200px">
+                <img class="card-img-top img-responsive" src="https://images.vexels.com/media/users/3/168402/isolated/preview/0a4728896b6230e811dbccb400b03b0c-professor-do-painel-do-professor-explica-o-do-curso-do-aluno.png" alt="Disciplina">
+                <div class="card-body">
+                    <h4 class="card-title text-center">Página de Disciplinas</h4>
+                    <p class="card-text text-center">Clique no botão abaixo para ver a lista de disciplinas.</p>
+                    <a href='@Url.Action("Index", "Disciplinas1")' class="btn btn-primary center-block">Disciplinas</a>
+                </div>
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,82 @@
+﻿@model SistemaFaculdade.Models.Professor
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2 class="text-center">Página de Exclusão</h2>
+<div>
+    <hr />
+    <table class="table table-bordered bg-warning">
+        <tr>
+            <th class="text-center">
+                @Html.DisplayName("Disciplina:")
+            </th>
+        </tr>
+        <tr>
+            <td class="text-center">
+                @Html.DisplayFor(model => model.Disciplina.Descricao)
+            </td>
+        </tr>
+        <tr>
+            <th class="text-center">
+                @Html.DisplayName("Nome:")
+            </th>
+        </tr>
+        <tr>
+            <td class="text-center">
+                @Html.DisplayFor(model => model.Nome)
+            </td>
+        </tr>
+        <tr>
+            <th class="text-center">
+                @Html.DisplayName("Data de Nascimento:")
+            </th>
+        </tr>
+        <tr>
+            <td class="text-center">
+                @Html.DisplayFor(model => model.DataNascimento)
+            </td>
+        </tr>
+        <tr>
+            <th class="text-center">
+                @Html.DisplayName("Salário:")
+            </th>
+        </tr>
+        <tr>
+            <td class="text-center">
+                @Html.DisplayFor(model => model.Salario)
+            </td>
+        </tr>
+    </table>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color col-md-offset-0">
+            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#ModalExcluirProfessor">
+                Excluir
+            </button>
+            <a href='@Url.Action("Index", "Professors1")' class="btn btn-danger">Cancelar</a>
+        </div>
+        <div class="modal fade" id="ModalExcluirProfessor" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h4 class="modal-title text-center" id="exampleModalLongTitle">Tem certeza que deseja excluir o cadastro de @Html.DisplayFor(model => model.Nome)?</h4>
+                    </div>
+                    <div class="modal-body text-center alert-danger">
+                        Esta ação não poderá ser revertida.
+                    </div>
+                    <div class="modal-footer">
+                        <input type="submit" value="Excluir" class="btn btn-default btn-success" />
+                        <a href='@Url.Action("Index", "Professors1")' class="btn btn-danger" data-dismiss="modal">Cancelar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>

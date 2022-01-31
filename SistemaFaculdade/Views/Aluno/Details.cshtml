@@ -1,0 +1,57 @@
+﻿@model SistemaFaculdade.Models.Aluno
+
+@{
+    ViewBag.Title = "Details";
+}
+<h2 class="text-center">Detalhes de @Html.DisplayFor(model => model.Nome) </h2>
+<div>
+    <hr />
+    <table class="table table-bordered bg-warning">
+        <tr>
+            <th class="text-center">
+                @Html.DisplayName("Curso:")
+            </th>
+        </tr>
+        <tr>
+            <td class="text-center">
+                @Html.DisplayFor(model => model.Curso.Descricao)
+            </td>
+        </tr>
+        <tr>
+            <th class="text-center">
+                @Html.DisplayName("Nome:")
+            </th>
+        </tr>
+        <tr>
+            <td class="text-center">
+                @Html.DisplayFor(model => model.Nome)
+            </td>
+        </tr>
+        <tr>
+            <th class="text-center">
+                @Html.DisplayName("Data de Nascimento:")
+            </th>
+        </tr>
+        <tr>
+            <td class="text-center">
+                @Html.DisplayFor(model => model.DataNascimento)
+            </td>
+        </tr>
+        <tr>
+            <th class="text-center">
+                @Html.DisplayName("Média de Notas:")
+            </th>
+        </tr>
+        <tr>
+            <td class="text-center">
+                @Html.DisplayFor(model => model.MediaNota)
+            </td>
+        </tr>
+    </table>
+    <div class="form-group">
+        <div class="col-md-offset-0 col-md-10">
+            <a href='@Url.Action("Edit", "Aluno", new { id = Model.IDAluno})' class="btn btn-success">Editar</a>
+            <a href='@Url.Action("Index", "Aluno")' class="btn btn-danger">Cancelar</a>
+        </div>
+    </div>
+</div>

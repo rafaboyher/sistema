@@ -1,0 +1,28 @@
+﻿@model SistemaFaculdade.Models.Disciplina
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2 class="text-center">Detalhes da disciplina @Html.DisplayFor(model => model.Descricao)</h2>
+<div>
+    <hr />
+    <table class="table table-bordered bg-warning">
+        <tr>
+            <th class="text-center">
+                @Html.DisplayName("Descrição:")
+            </th>
+        </tr>
+        <tr>
+            <td class="text-center">
+                @Html.DisplayFor(model => model.Descricao)
+            </td>
+        </tr>
+    </table>
+    <div class="form-group">
+        <div class="col-md-offset-0 col-md-10">
+            <a href='@Url.Action("Edit", "Disciplinas1", new { id = Model.IDDisciplina})' class="btn btn-success">Editar</a>
+            <a href='@Url.Action("Index", "Disciplinas1")' class="btn btn-danger">Cancelar</a>
+        </div>
+    </div>
+</div>

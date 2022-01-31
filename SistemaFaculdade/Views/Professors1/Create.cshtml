@@ -1,0 +1,62 @@
+﻿@model SistemaFaculdade.Models.Professor
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2 class="text-center">Adicionar Novo Professor</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-group">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group col-md-offset-0 col-md-10">
+            @Html.Label("Nome:", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Nome, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Nome, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group col-md-offset-0 col-md-10">
+            @Html.Label("Data de Nascimento:", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.DataNascimento, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.DataNascimento, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group col-md-offset-0 col-md-10">
+            @Html.LabelFor(model => model.IDDisciplina, "Disciplina:", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("IDDisciplina", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.IDDisciplina, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group col-md-offset-0 col-md-10">
+            @Html.Label("Salário:", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Salario, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Salario, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-0 col-md-10">
+                <br />
+                <input type="submit" value="Salvar" class="btn btn-success" />
+                <a href='@Url.Action("Index", "Professors1")' class="btn btn-danger">Cancelar</a>
+            </div>
+        </div>
+    </div>
+}
+
+    
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
